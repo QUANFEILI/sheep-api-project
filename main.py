@@ -23,7 +23,7 @@ def delete_sheep(id: int):
     if id not in db.data:
         raise HTTPException(status_code=404, detail="Sheep not found")
     del db.data[id]
-    return Response(status_code=status.HTTP_204_NO_CONTENT)  # 这里明确指定返回204响应
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 @app.put("/sheep/{id}", response_model=Sheep)
 def update_sheep(id: int, sheep: Sheep):
